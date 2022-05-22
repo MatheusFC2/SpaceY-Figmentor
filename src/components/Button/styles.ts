@@ -14,5 +14,6 @@ export const ButtonComponent = styled.button<ButtonProps>`
   font-weight: 700;
   &:hover {
     cursor: pointer;
+    background: var(--mars-dark);
   }
 `;
