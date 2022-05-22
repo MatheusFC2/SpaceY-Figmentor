@@ -58,4 +58,4 @@ Remembering that you need to have a [Figma](http://figma.com/) account to access
 
 ---
 
-Made with 💜 by [omatheusfc](https://omatheusfc.vercel.app/) 👋
+Made with 💙 by [omatheusfc](https://omatheusfc.vercel.app/) 👋
