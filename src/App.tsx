@@ -1,44 +1,63 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { GlobalStyles } from './styles/globalstyles';
+import {
+  Container, 
+  Header, 
+  Logo, 
+  Main, 
+  FirstTitle, 
+  SecondTitle, 
+  Subtitle, 
+  AstrounautIllustration, 
+  DivButton,
+  DivIcons,
+} from './styles/styles'
+import Button from './components/Button';
+import pixelToRem from './utils/pxToRem';
+import Icon from './components/Icon';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+      <Container flex='column' margin={pixelToRem(24, 112, 50)}>
+        <GlobalStyles/>
+        <Header>
+          <Logo >
+            <img src="/assets/logo.svg" alt="" />
+          </Logo>
+        </Header>
+        <Main>
+          <FirstTitle>Finalmente é possível!</FirstTitle>
+          <SecondTitle>Sua jornada para Marte começa aqui<span>.</span></SecondTitle>
+          <Subtitle>A primeira viagem para Marte estará disponivél apartir do dia 12/03/2028. Inscreva-se em nossa lista de espera. </Subtitle>
+          <AstrounautIllustration />
+
+          <DivButton>
+          <Button text="Inscreva-se agora" fullWidth />
+          </DivButton>
+        </Main> 
+
+        <DivIcons
+          whileInView="visible"
+          initial="initial"
+          viewport={{ once: true }}
+          variants={{
+            initial: { opacity: 0, y: 10 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.3 },
+            },
+          }}
+        >
+          <Icon src="../assets/icon-rocket.svg" txt="Foguetes com a mais alta tecnologia e conforto." alt="Rocket" />
+
+          <Icon src="../assets/icon-flag.svg" txt="Mais de 100 missões consecutivas com sucesso." alt="Flag" />
+
+          <Icon src="../assets/icon-telescope.svg" txt="Experiencia única e exclusiva." alt="Telescope" />
+        </DivIcons>
+      </Container>
+        
+      </>
   )
 }
 
