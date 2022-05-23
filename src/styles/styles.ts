@@ -182,7 +182,7 @@ export const SectionAbout = styled.div<GalleryFlexContainerProps>`
 export const ImageMars = styled(motion.image)`
   width: ${pixelToRem(621)};
   height: ${pixelToRem(621)};
-  background-image: url("/images/mars.svg");
+  background-image: url("../../assets/mars.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -277,7 +277,7 @@ export const DivForm = styled(motion.div)`
   align-items: center;
   justify-content: center;
   padding: ${pixelToRem(39, 51, 61, 52)};
-  margin-left: ${pixelToRem(120)};
+  margin-left: ${pixelToRem(560)};
   max-height: ${pixelToRem(792)};
 `;
 export const IconForm = styled.div`
