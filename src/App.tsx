@@ -16,6 +16,9 @@ import {
 import Button from './components/Button';
 import pixelToRem from './utils/pxToRem';
 import Icon from './components/Icon';
+import Form from './components/Form';
+import Gallery from './components/Gallery';
+import { ArrowRight, ArrowLeft } from "./components/Gallery/styles"
 
 function App() {
   return (
@@ -71,11 +74,11 @@ function App() {
               initial="initial"
               viewport={{ once: true }}
               variants={{
-                initial: { opacity: 0, x: "-130%" },
+                initial: { opacity: 0, x: -400 },
                 visible: {
-                  opacity: 1,
+                  opacity: 0.5,
                   x: 0,
-                  transition: { duration: 0.8, delay: 0.5 },
+                  transition: { duration: 1, delay: 1.5 },
                 },
               }}
             />
@@ -145,15 +148,117 @@ function App() {
             </TextSubscribe>
           </DivLogo>
 
-{/*           <ArrowLeft />
+          <ArrowLeft />
           <Gallery />
-          <ArrowRight /> */}
+          <ArrowRight />
 
 
         </GalleryContent>
 
       </SectionAbout>  
+      <SectionForm
+      >
+        <ContainerForm>
+          <DivForm
+            whileInView="visible"
+            initial="initial"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0, x: -60 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 1, delay: 1.5 },
+              },
+            }}
 
+          >
+            <IconForm />
+
+            <TitleForm>
+              Garanta sua vaga para a primeira viagem
+            </TitleForm>
+
+            <SubtitleForm>
+              Preencha os campos abaixo para entrar na lista de espera
+            </SubtitleForm>
+
+            <Form type="text" text='Seu nome' />
+            <Form type="email" text='E-mail' />
+            <Form type="number" text='Telefone' />
+
+            <DivInputCheckbox>
+              <InputCheckbox type="checkbox" />
+
+              <TextCheckbox>Concordo em receber comunicações</TextCheckbox>
+            </DivInputCheckbox>
+
+            <Button text="Garantir minha vaga" fullWidth />
+
+          </DivForm>
+
+          <DivRocketImage
+            whileInView="visible"
+            initial="initial"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0, y: 0 },
+              visible: {
+                opacity: 1,
+                y: -100,
+                transition: { duration: 1, delay: 1 },
+              },
+            }}
+
+          >
+            <RocketImage>
+              <img src="../assets/footer-illustration-rocket.svg" alt="Rocket" />
+            </RocketImage>
+          </DivRocketImage>
+        </ContainerForm>
+
+        <SectionFooter>
+          <DivImageSmoke
+
+            whileInView="visible"
+            initial="initial"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0, y: 0 },
+              visible: {
+                opacity: 1,
+                y: -100,
+                transition: { duration: 0.7, delay: 0.9 },
+              },
+            }}
+          >
+            <img src="../assets/Footer-smoke.svg" alt="" />
+          </DivImageSmoke>
+
+
+          <DivFooterBottom>
+            <DivLogoSpaceY>
+              <Logo />
+            </DivLogoSpaceY>
+
+            <DivSocial>
+              <a href="https://www.instagram.com/omatheusfc/" target="_blank"><img src="../assets/instagram.svg" alt="" /></a>
+              <a href="https://www.linkedin.com/in/matheus-freitas-campos-omatheusfc-235305137/" target="_blank"><img src="../assets/linkedin.svg" alt="" /></a>
+              <a href="https://omatheusfc.vercel.app/" target="_blank"><img src="../assets/code.svg" alt="" /></a>
+            </DivSocial>
+
+            <DivFooterMenu>
+              <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/">Sobre nós</a></li>
+                <li><a href="/">Missões</a></li>
+                <li><a href="/">Contato</a></li>
+              </ul>
+            </DivFooterMenu>
+          </DivFooterBottom>
+        </SectionFooter>
+
+      </SectionForm>
       </>
   )
 }
